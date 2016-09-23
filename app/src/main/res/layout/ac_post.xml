@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:background="#AA000088">
+        <TextView
+            android:layout_height="wrap_content"
+
+            android:layout_width="wrap_content"
+            android:text="來點字幕吧！"
+            android:textSize="20sp"
+            android:textColor="#FEFEFE"
+            android:textStyle="bold"
+            android:layout_marginRight="150dp"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="確定"
+            android:textSize="20sp"
+            android:background="#77000088"
+            android:textColor="#FEFEFE"
+            android:textStyle="bold"
+            />
+
+
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:hint="打出你的超狂字幕吧！XX BOY"
+        android:ems="10"
+        android:id="@+id/editText" />
+
+
+
+</LinearLayout>
