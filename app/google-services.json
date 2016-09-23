@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "454186232979",
+    "firebase_url": "https://crazysub-a7da8.firebaseio.com",
+    "project_id": "crazysub-a7da8",
+    "storage_bucket": "crazysub-a7da8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454186232979:android:818de759e477b4b4",
+        "android_client_info": {
+          "package_name": "com.expixel.crazysub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454186232979-09b3a45d3nt48hffo015l8qqehn5la3j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.expixel.crazysub",
+            "certificate_hash": "0565807141231E86556650B4B5000E4CDD0DB411"
+          }
+        },
+        {
+          "client_id": "454186232979-9dqmgh2eos3d961r95m5i7rlf2hjprgs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw7feE_VmFZiSb3sWpf8bP2kyYJL5kYFE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454186232979-9dqmgh2eos3d961r95m5i7rlf2hjprgs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
