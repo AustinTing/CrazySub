@@ -3,39 +3,37 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
-    <LinearLayout
+    <RelativeLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:padding="10dp"
         android:background="#AA000088">
         <TextView
             android:layout_height="wrap_content"
-
             android:layout_width="wrap_content"
             android:text="設計你的旁白"
+            android:layout_centerVertical="true"
             android:textSize="20sp"
             android:textColor="#FEFEFE"
             android:textStyle="bold"
-            android:layout_marginRight="150dp"
             />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="確定"
             android:textSize="20sp"
+            android:layout_alignParentRight="true"
             android:background="#77000088"
             android:textColor="#FEFEFE"
             android:textStyle="bold"
             />
-
-
-    </LinearLayout>
+    </RelativeLayout>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#11000088"
-        android:hint="今天也來點超狂旁白吧！ヽ(✿ﾟ▽ﾟ)ノ"
+        android:layout_margin="8dp"
+        android:hint="來點超狂旁白吧！ヽ(✿ﾟ▽ﾟ)ノ"
         android:ems="10"
         android:id="@+id/editSub"/>
     <FrameLayout
@@ -66,7 +64,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#11880000"
+        android:layout_margin="8dp"
         android:hint="加入說明，如果你有的話"
         android:ems="10"
         android:id="@+id/editDsc" />

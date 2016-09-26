@@ -38,3 +38,5 @@ obj/
 /captures
 .externalNativeBuild
 
+google-services.json
+
