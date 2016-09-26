@@ -3,33 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
-    <LinearLayout
+    <RelativeLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:padding="10dp"
         android:background="#AA000088">
         <TextView
             android:layout_height="wrap_content"
-
             android:layout_width="wrap_content"
             android:text="設計你的旁白"
+            android:layout_centerVertical="true"
             android:textSize="20sp"
             android:textColor="#FEFEFE"
             android:textStyle="bold"
-            android:layout_marginRight="150dp"
+
             />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="確定"
             android:textSize="20sp"
+            android:layout_alignParentRight="true"
             android:background="#77000088"
             android:textColor="#FEFEFE"
             android:textStyle="bold"
             />
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <EditText
         android:layout_width="match_parent"
