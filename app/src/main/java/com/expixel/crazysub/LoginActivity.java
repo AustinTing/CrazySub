@@ -120,8 +120,12 @@ public class LoginActivity extends BaseActivity {
                 firebaseAuthWithGoogle(account);
             } else {
                 // Google Sign In failed, update UI appropriately
+<<<<<<< HEAD
 
                 Toast.makeText(this, "Oops...Try again plz", Toast.LENGTH_SHORT).show();
+=======
+                Toast.makeText(this, "Oops...Please try again later", Toast.LENGTH_SHORT).show();
+>>>>>>> a81b82f1d5f17534724e5a4c1d5ff4ba5453ec88
             }
         }
     }
