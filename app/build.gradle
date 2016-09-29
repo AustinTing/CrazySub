@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+//Butter Knife
 apply plugin: 'android-apt'
 
 android {
@@ -32,9 +33,14 @@ dependencies {
     compile 'com.google.firebase:firebase-database:9.6.0'
     compile 'com.google.android.gms:play-services-auth:9.6.0'
 
+
+//    ImageLoader
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+//    Butter knife
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
-
+//    Percent Layout
+    compile 'com.android.support:percent:24.2.1'
     testCompile 'junit:junit:4.12'
 }
 
