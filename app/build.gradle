@@ -39,9 +39,12 @@ dependencies {
 //    Butter knife
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
+
 //    Percent Layout
     compile 'com.android.support:percent:24.2.1'
     testCompile 'junit:junit:4.12'
+    compile 'com.android.support:percent:24.2.1'
+
 }
 
 apply plugin: 'com.google.gms.google-services'
