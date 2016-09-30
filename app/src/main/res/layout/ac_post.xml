@@ -19,6 +19,7 @@
             />
 
         <Button
+            android:id="@+id/btnPostOk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="確定"
@@ -31,13 +32,7 @@
 
     </RelativeLayout>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="8dp"
-        android:hint="來點超狂旁白吧！ヽ(✿ﾟ▽ﾟ)ノ"
-        android:ems="10"
-        android:id="@+id/editSub"/>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,6 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="320dp"
             android:layout_gravity="center"
+            android:scaleType="centerCrop"
             android:background="#000088" />
 
         <TextView
@@ -65,6 +61,13 @@
             android:textSize="35dp" />
 
     </FrameLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="8dp"
+        android:hint="來點超狂旁白吧！ヽ(✿ﾟ▽ﾟ)ノ"
+        android:ems="10"
+        android:id="@+id/editSub"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"

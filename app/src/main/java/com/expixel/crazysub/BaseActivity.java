@@ -23,7 +23,6 @@ public class BaseActivity extends AppCompatActivity {
     protected FirebaseAuth auth;
     protected DatabaseReference dbRef;
 
-
     public void showProgressDialog(String message) {
         if (progressDialog == null) {
             progressDialog = new ProgressDialog(this);
@@ -48,6 +47,7 @@ public class BaseActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         dbRef = FirebaseDatabase.getInstance().getReference();
+
 
     }
 

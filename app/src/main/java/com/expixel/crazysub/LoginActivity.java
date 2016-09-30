@@ -23,6 +23,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * Created by cellbody on 2016/9/23.
@@ -33,12 +35,16 @@ public class LoginActivity extends BaseActivity {
     private static final int RC_SIGN_IN = 9001;
     private FirebaseAuth.AuthStateListener authListener;
 
+
+
+
 //    記得在網站上啟用google 供應商
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        Google Config
         setContentView(R.layout.ac_login);
+
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -120,12 +126,8 @@ public class LoginActivity extends BaseActivity {
                 firebaseAuthWithGoogle(account);
             } else {
                 // Google Sign In failed, update UI appropriately
-<<<<<<< HEAD
 
-                Toast.makeText(this, "Oops...Try again plz", Toast.LENGTH_SHORT).show();
-=======
                 Toast.makeText(this, "Oops...Please try again later", Toast.LENGTH_SHORT).show();
->>>>>>> a81b82f1d5f17534724e5a4c1d5ff4ba5453ec88
             }
         }
     }
