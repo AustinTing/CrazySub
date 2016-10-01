@@ -36,6 +36,7 @@ public class PostActivity extends BaseDialogActivity {
     @BindView(R.id.btnPostOk)
     Button btnPostOk;
 
+    Image img;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,8 +48,8 @@ public class PostActivity extends BaseDialogActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
                     Log.d(TAG, "PostActivity: data: "+data.getValue());
-                    Image image = data.getValue(Image.class);
-                    ImageLoader.getInstance().displayImage(image.url, imgToday);
+                    img= data.getValue(Image.class);
+                    ImageLoader.getInstance().displayImage(img.url, imgToday);
                 }
             }
 
@@ -82,13 +83,14 @@ public class PostActivity extends BaseDialogActivity {
     public void onClick() {
         Log.d(TAG, "PostActivity: btnPostOk onClick: ");
         String userUrl = auth.getCurrentUser().getPhotoUrl().toString();
+        String userName = auth.getCurrentUser().getDisplayName().toString();
         String sub = editSub.getText().toString();
         String dsc = editDsc.getText().toString();
 
         if(sub.equals("")){
             Toast.makeText(this, "忘記加你最狂的字幕啦RRRRRR", Toast.LENGTH_SHORT).show();
         }else if(!FastClickSensor.isFastDoubleClick()){
-            Post post = new Post(userUrl,System.currentTimeMillis(), sub, dsc, 0, 0);
+            Post post = new Post(userUrl,userName,img.url, System.currentTimeMillis(), sub, dsc, 0, 0);
             String key = dbRef.child("posts").push().getKey();
             String uid = auth.getCurrentUser().getUid();
             dbRef.child("post").child(key).setValue(post);

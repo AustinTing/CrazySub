@@ -6,14 +6,21 @@ package com.expixel.crazysub;
 
 public class Post {
     public String userImgUrl;
+    public String userName;
+    public String imgUrl;
     public Long postTime;
     public String subtitle;
     public String description;
     public int startCount;
     public int commentCount;
 
-    public Post(String userImgUrl, Long postTime, String subtitle, String description, int startCount, int commentCount) {
+    public Post() {
+    }
+
+    public Post(String userImgUrl, String userName, String imgUrl, Long postTime, String subtitle, String description, int startCount, int commentCount) {
         this.userImgUrl = userImgUrl;
+        this.userName = userName;
+        this.imgUrl = imgUrl;
         this.postTime = postTime;
         this.subtitle = subtitle;
         this.description = description;
