@@ -42,6 +42,7 @@
             android:id="@+id/img_item_post"
             android:layout_width="match_parent"
             android:layout_height="320dp"
+            android:scaleType="centerCrop"
             android:layout_gravity="center"
             android:background="#000088" />
 

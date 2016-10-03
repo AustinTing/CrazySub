@@ -38,7 +38,6 @@ public class MainActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         linearLayoutManager = new LinearLayoutManager(this);
         // 讓列表資料反轉 THIS ALSO SETS setStackFromBottom to true
         linearLayoutManager.setReverseLayout(true);
@@ -46,15 +45,11 @@ public class MainActivity extends BaseActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-
-
-
         FirebaseRecyclerAdapter<Post, ItemViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Post, ItemViewHolder>(
                         Post.class,
@@ -119,7 +114,6 @@ public class MainActivity extends BaseActivity {
         TextView dsc;
         TextView startCount;
         TextView commentCount;
-
 
 
         public ItemViewHolder(View view) {
