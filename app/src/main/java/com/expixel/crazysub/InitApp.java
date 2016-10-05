@@ -7,12 +7,6 @@ import android.content.pm.Signature;
 import android.util.Base64;
 import android.util.Log;
 
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by cellbody on 2016/9/23.
@@ -24,16 +18,7 @@ public class InitApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
 
-                .cacheInMemory(true)
-                // 先看會不會OOM 會的話在cach到記憶卡裡
-                //                .cacheOnDisk(true)
-                .build();
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
-                .defaultDisplayImageOptions(defaultOptions)
-                .build();
-        ImageLoader.getInstance().init(config);
         Log.i(TAG, this.getClass().getSimpleName()+": ImageLoader Init");
 
     }

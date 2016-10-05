@@ -13,8 +13,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.nostra13.universalimageloader.core.ImageLoader;
+
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -59,14 +60,19 @@ public class MainActivity extends BaseActivity {
                 ) {
                     @Override
                     protected void populateViewHolder(ItemViewHolder viewHolder, Post post, int position) {
-                        ImageLoader.getInstance().displayImage(post.userImgUrl, viewHolder.userImage);
-                        ImageLoader.getInstance().displayImage(post.imgUrl, viewHolder.img);
+                        Glide.with(MainActivity.this)
+                                .load(post.userImgUrl)
+                                .crossFade()
+                                .into(viewHolder.userImage);
+                        Glide.with(MainActivity.this)
+                                .load(post.imgUrl)
+                                .crossFade()
+                                .into(viewHolder.img);
                         viewHolder.userName.setText(post.userName);
                         viewHolder.sub.setText(post.subtitle);
                         viewHolder.dsc.setText(post.description);
                         viewHolder.startCount.setText(String.valueOf(post.startCount));
                         viewHolder.commentCount.setText(String.valueOf(post.commentCount));
-
 
                     }
                 };
