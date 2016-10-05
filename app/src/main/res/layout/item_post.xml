@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:textSize="25sp"
+            android:textSize="15sp"
             android:hint="小狂"
             android:layout_toEndOf="@id/userImg_item_post"/>
 
@@ -58,7 +58,7 @@
             android:padding="5dp"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="35dp" />
+            android:textSize="20sp" />
 
     </android.support.percent.PercentFrameLayout>
 
