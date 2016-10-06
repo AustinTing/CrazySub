@@ -11,10 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
-import com.nostra13.universalimageloader.core.ImageLoader;
+
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -49,7 +50,10 @@ public class PostActivity extends BaseDialogActivity {
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
                     Log.d(TAG, "PostActivity: data: "+data.getValue());
                     img= data.getValue(Image.class);
-                    ImageLoader.getInstance().displayImage(img.url, imgToday);
+                    Glide.with(PostActivity.this)
+                            .load(img.url)
+                            .crossFade()
+                            .into(imgToday);
                 }
             }
 
