@@ -35,23 +35,6 @@
             />
 
     </android.support.percent.PercentRelativeLayout>
-
-
-    <EditText
-        android:id="@+id/editSub"
-        app:layout_heightPercent="15%"
-        app:layout_widthPercent="100%"
-        android:hint="來點超狂旁白吧！ヽ(✿ﾟ▽ﾟ)ノ"
-        android:ems="10"
-        android:layout_below="@id/previewPost"/>
-    <EditText
-        android:id="@+id/editDsc"
-        app:layout_heightPercent="15%"
-        app:layout_widthPercent="100%"
-        android:hint="加入說明，如果你有的話"
-        android:ems="10"
-        android:layout_below="@id/editSub"/>
-
     <FrameLayout
         android:id="@+id/previewPost"
         app:layout_heightPercent="58%"
@@ -77,8 +60,26 @@
             android:text="太狂啦!!!"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
     </FrameLayout>
+
+    <EditText
+        android:id="@+id/editSub"
+        app:layout_heightPercent="15%"
+        app:layout_widthPercent="100%"
+        android:hint="來點超狂旁白吧！ヽ(✿ﾟ▽ﾟ)ノ"
+        android:ems="10"
+        android:layout_below="@id/previewPost"/>
+    <EditText
+        android:id="@+id/editDsc"
+        app:layout_heightPercent="15%"
+        app:layout_widthPercent="100%"
+        android:hint="加入說明，如果你有的話"
+        android:ems="10"
+        android:layout_below="@id/editSub"/>
+
+
 
 </android.support.percent.PercentRelativeLayout>
