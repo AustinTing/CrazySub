@@ -14,6 +14,9 @@
 
 
 ##To-do List
+- share
+  - share to third party
+  - [Frame to bitmap](http://stackoverflow.com/questions/21725916/convert-frame-layout-into-image-and-save-it)
 - Favorite Button
 - Comment
 - Back Problem
