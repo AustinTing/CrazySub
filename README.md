@@ -14,9 +14,10 @@
 
 
 ##To-do List
+- Back Problem
+- Logout
 - Favorite Button
 - Comment
-- Back Problem
 - Share Function
 - 可調整式的TextView
 - 描述的TextView空白有沒有必要弄消失

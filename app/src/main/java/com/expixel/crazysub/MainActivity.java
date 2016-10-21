@@ -15,7 +15,14 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.MutableData;
+import com.google.firebase.database.Transaction;
 
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,6 +36,8 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.recyclerView_main_base)
     RecyclerView recyclerView;
     LinearLayoutManager linearLayoutManager;
+
+    FirebaseRecyclerAdapter<Post, ItemViewHolder> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +60,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseRecyclerAdapter<Post, ItemViewHolder> adapter =
+        adapter =
                 new FirebaseRecyclerAdapter<Post, ItemViewHolder>(
                         Post.class,
                         ItemViewHolder.layoutResId,
@@ -59,7 +68,7 @@ public class MainActivity extends BaseActivity {
                         dbRef.child("post")
                 ) {
                     @Override
-                    protected void populateViewHolder(ItemViewHolder viewHolder, Post post, int position) {
+                    protected void populateViewHolder(ItemViewHolder viewHolder, Post post, final int position) {
                         Glide.with(MainActivity.this)
                                 .load(post.userImgUrl)
                                 .crossFade()
@@ -71,12 +80,60 @@ public class MainActivity extends BaseActivity {
                         viewHolder.userName.setText(post.userName);
                         viewHolder.sub.setText(post.subtitle);
                         viewHolder.dsc.setText(post.description);
-                        viewHolder.startCount.setText(String.valueOf(post.startCount));
-                        viewHolder.commentCount.setText(String.valueOf(post.commentCount));
+//                        viewHolder.dsc.setText(String.valueOf(position));
+//                        final int likeCount = post.likeCount;
+//                        if (likeCount != 0){
+//                            viewHolder.likeCount.setText(String.valueOf(likeCount));
+//                        }
 
+//                        viewHolder.commentCount.setText(String.valueOf(post.commentCount));
+                        final String key = getRef(position).getKey();
+//                        viewHolder.imgLike.setOnClickListener(new View.OnClickListener() {
+//                            @Override
+//                            public void onClick(View view) {
+//
+//                                dbRef.child("post").child(key).runTransaction(new Transaction.Handler() {
+//                                    @Override
+//                                    public Transaction.Result doTransaction(MutableData mutableData) {
+//                                        String uid = auth.getCurrentUser().getUid();
+//                                        Post post = mutableData.getValue(Post.class);
+//                                        if (post == null) {
+//                                            return Transaction.success(mutableData);
+//                                        }
+//
+//                                        if (post.likes.containsKey(uid)) {
+//                                            // Unlike the post and remove self from likes
+//                                            post.likeCount = post.likeCount - 1;
+//                                            post.likes.remove(uid);
+//                                        } else {
+//                                            // like the post and add self to likes
+//                                            post.likeCount = post.likeCount + 1;
+//                                            post.likes.put(uid, true);
+//                                        }
+//
+//                                        // Set value and report transaction success
+//                                        mutableData.setValue(post);
+//                                        return Transaction.success(mutableData);
+//
+//                                    }
+//
+//                                    @Override
+//                                    public void onComplete(DatabaseError databaseError, boolean b, DataSnapshot dataSnapshot) {
+//
+//                                    }
+//                                });
+//
+//                            }
+//                        });
                     }
                 };
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+//        recyclerView.smoothScrollToPosition();
     }
 
     @Override
@@ -118,8 +175,9 @@ public class MainActivity extends BaseActivity {
         ImageView img;
         TextView sub;
         TextView dsc;
-        TextView startCount;
+        TextView likeCount;
         TextView commentCount;
+        ImageView imgLike;
 
 
         public ItemViewHolder(View view) {
@@ -129,8 +187,9 @@ public class MainActivity extends BaseActivity {
             img = (ImageView) view.findViewById(R.id.img_item_post);
             sub = (TextView) view.findViewById(R.id.sub_item_post);
             dsc = (TextView) view.findViewById(R.id.dsc_item_post);
-            startCount = (TextView) view.findViewById(R.id.startCount_item_post);
-            commentCount = (TextView) view.findViewById(R.id.commentCount_item_post);
+//            likeCount = (TextView) view.findViewById(R.id.likeCount_item_post);
+//            commentCount = (TextView) view.findViewById(R.id.commentCount_item_post);
+//            imgLike = (ImageView) view.findViewById(R.id.imgLike_item_post);
         }
     }
 

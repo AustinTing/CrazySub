@@ -35,7 +35,7 @@
 
     <android.support.percent.PercentFrameLayout
         android:id="@+id/content_Post"
-        app:layout_heightPercent="58%"
+        app:layout_heightPercent="80%"
         app:layout_widthPercent="100%"
         android:padding="0dp"
         android:layout_below="@id/userInfo">
@@ -47,6 +47,7 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:layout_gravity="center"
+
              />
 
         <TextView
@@ -69,126 +70,127 @@
         app:layout_widthPercent="100%"
         android:padding="5dp"
         android:gravity="center"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:layout_below="@id/content_Post"/>
 
-    <android.support.percent.PercentRelativeLayout
-        android:id="@+id/actions"
-        app:layout_heightPercent="8%"
-        app:layout_widthPercent="100%"
-        android:orientation="horizontal"
-        android:layout_below="@id/dsc_item_post">
+    <!--<android.support.percent.PercentRelativeLayout-->
+        <!--android:id="@+id/actions"-->
+        <!--app:layout_heightPercent="8%"-->
+        <!--app:layout_widthPercent="100%"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_below="@id/dsc_item_post">-->
 
-        <ImageView
-            android:id="@+id/imgLike"
-            app:layout_heightPercent="60%"
-            app:layout_widthPercent="15%"
-            android:src="@drawable/like"
-            android:layout_centerVertical="true"
-            />
+        <!--<ImageView-->
+            <!--android:id="@+id/imgLike_item_post"-->
+            <!--app:layout_heightPercent="60%"-->
+            <!--app:layout_widthPercent="15%"-->
+            <!--android:src="@drawable/like"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:clickable="true"-->
+            <!--/>-->
 
-        <TextView
-            android:id="@+id/startCount_item_post"
-            app:layout_widthPercent="20%"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="1000"
-            android:layout_toEndOf="@id/imgLike"
-            android:textStyle="bold"
-            android:textColor="#f15555"
-            android:layout_centerVertical="true"
-            />
-        <ImageView
-            android:id="@+id/imgVacant_action"
-            app:layout_heightPercent="100%"
-            app:layout_widthPercent="30%"
-            android:layout_toEndOf="@id/startCount_item_post"
-            />
+        <!--<TextView-->
+            <!--android:id="@+id/likeCount_item_post"-->
+            <!--app:layout_widthPercent="20%"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="20sp"-->
+            <!--android:text="1000"-->
+            <!--android:layout_toEndOf="@id/imgLike_item_post"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textColor="#f15555"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--/>-->
+        <!--<ImageView-->
+            <!--android:id="@+id/imgVacant_action"-->
+            <!--app:layout_heightPercent="100%"-->
+            <!--app:layout_widthPercent="30%"-->
+            <!--android:layout_toEndOf="@id/likeCount_item_post"-->
+            <!--/>-->
 
-        <ImageView
-            android:id="@+id/imgComment"
-            app:layout_heightPercent="60%"
-            app:layout_widthPercent="15%"
-            android:src="@drawable/comment"
-            android:layout_toEndOf="@id/imgVacant_action"
-            android:layout_centerVertical="true"
-            />
+        <!--<ImageView-->
+            <!--android:id="@+id/imgComment"-->
+            <!--app:layout_heightPercent="60%"-->
+            <!--app:layout_widthPercent="15%"-->
+            <!--android:src="@drawable/comment"-->
+            <!--android:layout_toEndOf="@id/imgVacant_action"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--/>-->
 
-        <TextView
-            android:id="@+id/commentCount_item_post"
-            app:layout_widthPercent="20%"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_toEndOf="@id/imgComment"
-            android:text="99+"
-            android:textStyle="bold"
-            android:textColor="#08ba61"
-            android:layout_centerVertical="true"
-            />
-
-
-    </android.support.percent.PercentRelativeLayout>
-
-    <android.support.percent.PercentRelativeLayout
-        android:id="@+id/commenter1"
-        app:layout_widthPercent="100%"
-        app:layout_heightPercent="6%"
-        android:layout_below="@id/actions">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imgCommenter1"
-            app:layout_widthPercent="15%"
-            app:layout_heightPercent="80%"
-            app:civ_border_color="#AAAAAA"
-            app:civ_border_width="3dp"
-            android:layout_centerVertical="true"
-            android:src="@color/colorAccent"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="I am your FATHER!!!!"
-            android:layout_toEndOf="@id/imgCommenter1"
-            android:textSize="15sp"
-            android:layout_centerVertical="true"
-            />
+        <!--<TextView-->
+            <!--android:id="@+id/commentCount_item_post"-->
+            <!--app:layout_widthPercent="20%"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="20sp"-->
+            <!--android:layout_toEndOf="@id/imgComment"-->
+            <!--android:text="99+"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textColor="#08ba61"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--/>-->
 
 
-    </android.support.percent.PercentRelativeLayout>
-    <android.support.percent.PercentRelativeLayout
-        android:id="@+id/commenter2"
-        app:layout_widthPercent="100%"
-        app:layout_heightPercent="6%"
-        android:layout_below="@id/commenter1">
+    <!--</android.support.percent.PercentRelativeLayout>-->
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imgCommenter2"
-            app:layout_widthPercent="15%"
-            app:layout_heightPercent="80%"
-            app:civ_border_color="#AAAAAA"
-            app:civ_border_width="3dp"
-            android:layout_centerVertical="true"
-            android:src="@color/colorAccent"/>
+    <!--<android.support.percent.PercentRelativeLayout-->
+        <!--android:id="@+id/commenter1"-->
+        <!--app:layout_widthPercent="100%"-->
+        <!--app:layout_heightPercent="6%"-->
+        <!--android:layout_below="@id/actions">-->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="NOOOOOOOOOOOO~"
-            android:layout_toEndOf="@id/imgCommenter2"
-            android:textSize="15sp"
-            android:layout_centerVertical="true"
-            />
+        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+            <!--android:id="@+id/imgCommenter1"-->
+            <!--app:layout_widthPercent="15%"-->
+            <!--app:layout_heightPercent="80%"-->
+            <!--app:civ_border_color="#AAAAAA"-->
+            <!--app:civ_border_width="3dp"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:src="@color/colorAccent"/>-->
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="I am your FATHER!!!!"-->
+            <!--android:layout_toEndOf="@id/imgCommenter1"-->
+            <!--android:textSize="15sp"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--/>-->
 
 
-    </android.support.percent.PercentRelativeLayout>
+    <!--</android.support.percent.PercentRelativeLayout>-->
+    <!--<android.support.percent.PercentRelativeLayout-->
+        <!--android:id="@+id/commenter2"-->
+        <!--app:layout_widthPercent="100%"-->
+        <!--app:layout_heightPercent="6%"-->
+        <!--android:layout_below="@id/commenter1">-->
 
-    <ImageView
-        app:layout_widthPercent="30%"
-        app:layout_heightPercent="0.5%"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:background="#DDDDDD"
-        />
+        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+            <!--android:id="@+id/imgCommenter2"-->
+            <!--app:layout_widthPercent="15%"-->
+            <!--app:layout_heightPercent="80%"-->
+            <!--app:civ_border_color="#AAAAAA"-->
+            <!--app:civ_border_width="3dp"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:src="@color/colorAccent"/>-->
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="NOOOOOOOOOOOO~"-->
+            <!--android:layout_toEndOf="@id/imgCommenter2"-->
+            <!--android:textSize="15sp"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--/>-->
+
+
+    <!--</android.support.percent.PercentRelativeLayout>-->
+
+    <!--<ImageView-->
+        <!--app:layout_widthPercent="30%"-->
+        <!--app:layout_heightPercent="0.5%"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:background="#DDDDDD"-->
+        <!--/>-->
 
 </android.support.percent.PercentRelativeLayout>
 
