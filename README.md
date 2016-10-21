@@ -19,7 +19,6 @@
   - [Frame to bitmap](http://stackoverflow.com/questions/21725916/convert-frame-layout-into-image-and-save-it)
 - Favorite Button
 - Comment
-- Back Problem
 - Share Function
 - 可調整式的TextView
 - 描述的TextView空白有沒有必要弄消失

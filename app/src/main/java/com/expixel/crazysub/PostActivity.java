@@ -44,42 +44,49 @@ public class PostActivity extends BaseDialogActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ac_post);
         ButterKnife.bind(this);
-        dbRef.child("image").limitToLast(1).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot data : dataSnapshot.getChildren()) {
-                    Log.d(TAG, "PostActivity: data: "+data.getValue());
-                    img= data.getValue(Image.class);
-                    Glide.with(PostActivity.this)
-                            .load(img.url)
-                            .crossFade()
-                            .into(imgToday);
+//        limitToLast(1).
+        dbRef.child("image").limitToLast(1).addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot data : dataSnapshot.getChildren()) {
+                            Log.d(TAG, "PostActivity: data: " + data.getValue());
+                            img = data.getValue(Image.class);
+                            Glide.with(PostActivity.this)
+                                    .load(img.url)
+                                    .crossFade()
+                                    .into(imgToday);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Log.e(TAG, "PostActivity: onCancelled: " + databaseError.getDetails());
+
+                    }
                 }
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.e(TAG, "PostActivity: onCancelled: " + databaseError.getDetails());
-
-            }
-        });
+        );
 
 
-        editSub.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                tvSub.setText(editSub.getText());
-            }
+        editSub.addTextChangedListener(
+                new TextWatcher() {
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                        tvSub.setText(editSub.getText());
+                    }
 
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
-            }
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count,
+                                                  int after) {
+                    }
 
-            @Override
-            public void afterTextChanged(Editable s) {
-            }
-        });
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                    }
+                }
+
+        );
     }
 
 
@@ -91,10 +98,10 @@ public class PostActivity extends BaseDialogActivity {
         String sub = editSub.getText().toString();
         String dsc = editDsc.getText().toString();
 
-        if(sub.equals("")){
+        if (sub.equals("")) {
             Toast.makeText(this, "忘記加你最狂的字幕啦RRRRRR", Toast.LENGTH_SHORT).show();
-        }else if(!FastClickSensor.isFastDoubleClick()){
-            Post post = new Post(userUrl,userName,img.url, System.currentTimeMillis(), sub, dsc, 0, 0);
+        } else if (!FastClickSensor.isFastDoubleClick()) {
+            Post post = new Post(userUrl, userName, img.url, System.currentTimeMillis(), sub, dsc, 0, 0);
             String key = dbRef.child("posts").push().getKey();
             String uid = auth.getCurrentUser().getUid();
             dbRef.child("post").child(key).setValue(post);

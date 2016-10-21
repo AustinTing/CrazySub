@@ -90,6 +90,7 @@ public class LoginActivity extends BaseActivity {
 
 
     protected void nextActivity() {
+        Log.d(TAG, "LoginActivity: nextActivity:");
         Intent intent = new Intent();
         intent.setClass(this, MainActivity.class);
         startActivity(intent);
