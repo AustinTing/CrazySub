@@ -1,195 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="10dp">
 
-    <android.support.percent.PercentRelativeLayout
+    <RelativeLayout
         android:id="@+id/userInfo"
-        app:layout_heightPercent="10%"
-        app:layout_widthPercent="100%"
-        android:padding="0dp">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/userImg_item_post"
-            app:layout_heightPercent="80%"
-            app:layout_widthPercent="15%"
-            app:civ_border_color="#AAAAAA"
-            app:civ_border_width="3dp"
-            android:src="@color/colorAccent"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true" />
+        android:layout_width="match_parent"
+        android:layout_height="72dp">
 
         <TextView
             android:id="@+id/userName_item_post"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:textSize="15sp"
+            android:layout_marginLeft="72dp"
             android:hint="小狂"
-            android:layout_toEndOf="@id/userImg_item_post"/>
+            android:textSize="16sp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userImg_item_post"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            tools:src="@color/colorAccent" />
 
 
-    </android.support.percent.PercentRelativeLayout>
+    </RelativeLayout>
 
-    <android.support.percent.PercentFrameLayout
+    <TextView
+        android:id="@+id/dsc_item_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userInfo"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:textSize="14dp"
+        tools:text="Description" />
+
+    <FrameLayout
         android:id="@+id/content_Post"
-        app:layout_heightPercent="58%"
-        app:layout_widthPercent="100%"
-        android:padding="0dp"
-        android:layout_below="@id/userInfo">
-
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/dsc_item_post"
+        android:layout_centerHorizontal="true">
 
         <ImageView
             android:id="@+id/img_item_post"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
             android:layout_gravity="center"
-             />
+            android:scaleType="centerCrop"
+            tools:src="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/sub_item_post"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_widthPercent="100%"
             android:layout_gravity="bottom"
             android:background="#000000"
-            android:padding="5dp"
+            android:padding="8dp"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-
-    </android.support.percent.PercentFrameLayout>
-
-    <TextView
-        android:id="@+id/dsc_item_post"
-        app:layout_heightPercent="10%"
-        app:layout_widthPercent="100%"
-        android:padding="5dp"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:layout_below="@id/content_Post"/>
-
-    <android.support.percent.PercentRelativeLayout
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+    <RelativeLayout
         android:id="@+id/actions"
-        app:layout_heightPercent="8%"
-        app:layout_widthPercent="100%"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:gravity="center_horizontal"
         android:orientation="horizontal"
-        android:layout_below="@id/dsc_item_post">
+        android:layout_below="@+id/content_Post"
+        android:layout_alignParentStart="true">
 
         <ImageView
             android:id="@+id/imgLike"
-            app:layout_heightPercent="60%"
-            app:layout_widthPercent="15%"
-            android:src="@drawable/like"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_centerVertical="true"
-            />
+            android:src="@drawable/like" />
 
         <TextView
             android:id="@+id/startCount_item_post"
-            app:layout_widthPercent="20%"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="1000"
-            android:layout_toEndOf="@id/imgLike"
-            android:textStyle="bold"
-            android:textColor="#f15555"
             android:layout_centerVertical="true"
-            />
+            android:layout_toEndOf="@id/imgLike"
+            android:textColor="#f15555"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="1000" />
+
         <ImageView
             android:id="@+id/imgVacant_action"
-            app:layout_heightPercent="100%"
-            app:layout_widthPercent="30%"
-            android:layout_toEndOf="@id/startCount_item_post"
-            />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/imgLike"
+            android:layout_toEndOf="@id/startCount_item_post" />
 
         <ImageView
             android:id="@+id/imgComment"
-            app:layout_heightPercent="60%"
-            app:layout_widthPercent="15%"
-            android:src="@drawable/comment"
-            android:layout_toEndOf="@id/imgVacant_action"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_centerVertical="true"
-            />
+            android:layout_toEndOf="@id/imgVacant_action"
+            android:src="@drawable/comment" />
 
         <TextView
             android:id="@+id/commentCount_item_post"
-            app:layout_widthPercent="20%"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_toEndOf="@id/imgComment"
-            android:text="99+"
-            android:textStyle="bold"
-            android:textColor="#08ba61"
             android:layout_centerVertical="true"
-            />
+            android:layout_toEndOf="@id/imgComment"
+            android:textColor="#08ba61"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="99+" />
+    </RelativeLayout>
 
-
-    </android.support.percent.PercentRelativeLayout>
-
-    <android.support.percent.PercentRelativeLayout
+    <RelativeLayout
         android:id="@+id/commenter1"
-        app:layout_widthPercent="100%"
-        app:layout_heightPercent="6%"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         android:layout_below="@id/actions">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgCommenter1"
-            app:layout_widthPercent="15%"
-            app:layout_heightPercent="80%"
-            app:civ_border_color="#AAAAAA"
-            app:civ_border_width="3dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_centerVertical="true"
-            android:src="@color/colorAccent"/>
+            tools:src="@color/colorAccent" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="I am your FATHER!!!!"
-            android:layout_toEndOf="@id/imgCommenter1"
-            android:textSize="15sp"
             android:layout_centerVertical="true"
-            />
+            android:layout_toEndOf="@id/imgCommenter1"
+            android:textSize="14sp"
+            tools:text="I am your FATHER!!!!" />
 
 
-    </android.support.percent.PercentRelativeLayout>
-    <android.support.percent.PercentRelativeLayout
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/commenter2"
-        app:layout_widthPercent="100%"
-        app:layout_heightPercent="6%"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         android:layout_below="@id/commenter1">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgCommenter2"
-            app:layout_widthPercent="15%"
-            app:layout_heightPercent="80%"
-            app:civ_border_color="#AAAAAA"
-            app:civ_border_width="3dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_centerVertical="true"
-            android:src="@color/colorAccent"/>
+            tools:src="@color/colorAccent" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NOOOOOOOOOOOO~"
-            android:layout_toEndOf="@id/imgCommenter2"
-            android:textSize="15sp"
             android:layout_centerVertical="true"
-            />
+            android:layout_toEndOf="@id/imgCommenter2"
+            android:textSize="14sp"
+            tools:text="NOOOOOOOOOOOO~" />
 
 
-    </android.support.percent.PercentRelativeLayout>
+    </RelativeLayout>
 
-    <ImageView
-        app:layout_widthPercent="30%"
-        app:layout_heightPercent="0.5%"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:background="#DDDDDD"
-        />
 
-</android.support.percent.PercentRelativeLayout>
+
+</RelativeLayout>
 
 

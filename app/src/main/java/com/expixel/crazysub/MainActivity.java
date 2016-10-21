@@ -129,8 +129,6 @@ public class MainActivity extends BaseActivity {
             img = (ImageView) view.findViewById(R.id.img_item_post);
             sub = (TextView) view.findViewById(R.id.sub_item_post);
             dsc = (TextView) view.findViewById(R.id.dsc_item_post);
-            startCount = (TextView) view.findViewById(R.id.startCount_item_post);
-            commentCount = (TextView) view.findViewById(R.id.commentCount_item_post);
         }
     }
 
