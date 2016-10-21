@@ -54,12 +54,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:background="@color/colorPrimaryDark"
             android:padding="8dp"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:shadowColor="#000000"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="4"
+            tools:text="安安幾歲住哪裡"
+            />
     </FrameLayout>
 
     <TextView
@@ -75,7 +80,7 @@
     <LinearLayout
         android:id="@+id/actions"
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@+id/dsc_item_post"
         android:paddingBottom = "16dp">

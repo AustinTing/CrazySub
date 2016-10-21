@@ -9,7 +9,7 @@
         android:id="@+id/postTitle"
         android:layout_width="match_parent"
         android:layout_height="72dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorPrimaryLight"
         android:padding="16dp">
         <TextView
             android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
             android:layout_centerVertical="true"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:textColor="#FEFEFE"
+            android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"/>
         <Button
             android:id="@+id/btnPostOk"
@@ -27,14 +27,12 @@
             android:textSize="16sp"
             android:layout_alignParentRight="true"
             android:background="@drawable/ok_button"
-            android:textColor="#FEFEFE"
-            android:textStyle="bold"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:layout_centerVertical="true" />
     </RelativeLayout>
 
     <FrameLayout
         android:id="@+id/previewPost"
-
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:padding="16dp"
@@ -44,14 +42,17 @@
             android:id="@+id/imgToday"
             android:layout_height="214dp"
             android:layout_width="214dp"
-            tools:background="@color/colorPrimary"
+            android:background="@color/colorPrimaryLight"
             android:layout_gravity="center_horizontal"/>
         <TextView
             android:id="@+id/tvSub"
             android:layout_width="214dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
-            android:background="#000000"
+            android:shadowColor="@color/colorPrimaryDark"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="4"
             android:padding="5dp"
             tools:text="太狂啦!!!"
             android:textAlignment="center"

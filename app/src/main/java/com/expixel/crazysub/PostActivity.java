@@ -55,6 +55,7 @@ public class PostActivity extends BaseDialogActivity {
                             Glide.with(PostActivity.this)
                                     .load(img.url)
                                     .crossFade()
+                                    .centerCrop()
                                     .into(imgToday);
                         }
                     }
