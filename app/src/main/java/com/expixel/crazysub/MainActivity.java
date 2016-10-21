@@ -54,6 +54,7 @@ public class MainActivity extends BaseActivity {
         linearLayoutManager.setStackFromEnd(true);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.addItemDecoration(new SimpleDividerItemDecoration(this));
 
     }
 
